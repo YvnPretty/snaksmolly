@@ -347,7 +347,7 @@
               <label class="block text-[11px] font-bold text-slate-400 mb-1">
                 WhatsApp para recibir el pedido:
               </label>
-              <input type="tel" id="business-whatsapp" value="5214421234567" placeholder="Ej. 5214420000000" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-amber-300 font-mono focus:outline-none focus:border-amber-400">
+              <input type="tel" id="business-whatsapp" value="5532405326" placeholder="Ej. 5532405326" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-amber-300 font-mono focus:outline-none focus:border-amber-400">
               <span class="text-[9px] text-slate-500 block mt-1">Puedes ingresar tu número real con clave de país (ej. 521...).</span>
             </div>
 
@@ -792,7 +792,10 @@
       const eventDate = document.getElementById('order-date').value || 'Por definir';
       const guests = document.getElementById('order-guests').value || 'No especificado';
       const notes = document.getElementById('order-notes').value.trim();
-      const targetWhatsApp = document.getElementById('business-whatsapp').value.replace(/[^0-9]/g, '') || '5214421234567';
+      let targetWhatsApp = document.getElementById('business-whatsapp').value.replace(/[^0-9]/g, '') || '5532405326';
+      if (targetWhatsApp.length === 10) {
+        targetWhatsApp = '52' + targetWhatsApp;
+      }
 
       const totalSelected = state.frutas.size + state.botanas.size + state.toppings.size + state.especiales.size;
       if (totalSelected === 0) {
