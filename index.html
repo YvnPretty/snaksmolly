@@ -271,12 +271,27 @@
             </div>
           </div>
 
-          <!-- 5. SNACKS ESPECIALES -->
+          <!-- 5. BABY SHOWER -->
+          <div class="card-dark rounded-2xl p-6 border-l-4 border-l-pink-500 shadow-xl">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                  <span class="w-7 h-7 rounded-full bg-pink-500 text-white text-xs font-black flex items-center justify-center">5</span>
+                  Baby Shower
+                </h2>
+                <p class="text-xs text-slate-400 mt-1">Detalles y opciones perfectas para un evento de bienvenida al bebé:</p>
+              </div>
+              <span class="text-xs bg-pink-950 text-pink-300 px-2.5 py-1 rounded-full border border-pink-800/50" id="count-baby-shower">0 seleccionados</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs" id="group-baby-shower"></div>
+          </div>
+
+          <!-- 6. SNACKS ESPECIALES -->
           <div class="card-dark rounded-2xl p-6 border-l-4 border-l-purple-500 shadow-xl">
             <div class="flex items-center justify-between mb-4">
               <div>
                 <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                  <span class="w-7 h-7 rounded-full bg-purple-500 text-white text-xs font-black flex items-center justify-center">5</span>
+                  <span class="w-7 h-7 rounded-full bg-purple-500 text-white text-xs font-black flex items-center justify-center">6</span>
                   Snacks Especiales (*Costo Extra)
                 </h2>
                 <p class="text-xs text-slate-400 mt-1">Platillos estrella preparados al momento que encantan a todos:</p>
@@ -287,7 +302,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs" id="group-especiales"></div>
           </div>
 
-          <!-- 6. SALSAS Y ESCARCHADOS -->
+          <!-- 7. SALSAS Y ESCARCHADOS -->
           <div class="card-dark rounded-2xl p-6 border-l-4 border-l-cyan-500 shadow-xl">
             <h2 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
               <span class="w-7 h-7 rounded-full bg-cyan-500 text-black text-xs font-black flex items-center justify-center">6</span>
@@ -332,6 +347,10 @@
                 <span class="text-[10px] text-slate-400 uppercase font-semibold">Toppings</span>
               </div>
               <div class="bg-slate-800/80 p-2 rounded-xl border border-slate-700/60">
+                <span class="text-lg font-black text-pink-400 block" id="badge-baby-shower">0</span>
+                <span class="text-[10px] text-slate-400 uppercase font-semibold">Baby</span>
+              </div>
+              <div class="bg-slate-800/80 p-2 rounded-xl border border-slate-700/60">
                 <span class="text-lg font-black text-purple-400 block" id="badge-especiales">0</span>
                 <span class="text-[10px] text-slate-400 uppercase font-semibold">Especiales</span>
               </div>
@@ -348,7 +367,6 @@
                 WhatsApp para recibir el pedido:
               </label>
               <input type="tel" id="business-whatsapp" value="5532405326" placeholder="Ej. 5532405326" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-amber-300 font-mono focus:outline-none focus:border-amber-400">
-              <span class="text-[9px] text-slate-500 block mt-1">Puedes ingresar tu número real con clave de país (ej. 521...).</span>
             </div>
 
             <!-- BOTÓN PRINCIPAL DE ENVÍO A WHATSAPP -->
@@ -515,7 +533,21 @@
         </div>
       </div>
 
-      <!-- SECCIÓN 4: SNACKS ESPECIALES -->
+      <!-- SECCIÓN 4: BABY SHOWER -->
+      <div class="card-dark rounded-2xl p-6 border-t-4 border-t-pink-500">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <span>👶</span> Baby Shower (7 Opciones)
+            </h3>
+            <p class="text-xs text-slate-400">Temática dulce y elegante para celebraciones de bienvenida al bebé.</p>
+          </div>
+          <span class="text-xs bg-pink-950 text-pink-300 px-3 py-1 rounded-full border border-pink-800">Evento especial</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs" id="catalog-baby-shower"></div>
+      </div>
+
+      <!-- SECCIÓN 5: SNACKS ESPECIALES -->
       <div class="card-dark rounded-2xl p-6 border-t-4 border-t-purple-500">
         <div class="flex items-center justify-between mb-4">
           <div>
@@ -628,6 +660,15 @@
         { name: "Crayón", icon: "🖍️" },
         { name: "Mini jumex", icon: "🧃" }
       ],
+      babyShower: [
+        { name: "Pastelito de baby shower", icon: "🎂" },
+        { name: "Galletas decoradas", icon: "🍪" },
+        { name: "Cake pops pastel", icon: "🧁" },
+        { name: "Cupcakes baby", icon: "🧁" },
+        { name: "Muffins de colores", icon: "🧁" },
+        { name: "Mesas dulces con tema bebé", icon: "🍼" },
+        { name: "Bonetes / souvenirs baby", icon: "🎀" }
+      ],
       especiales: [
         { name: "Chicharrones preparados", desc: "Con crema, col, jitomate, cueritos, aguacate y salsa botanera.", icon: "🥓" },
         { name: "Doritos preparados", desc: "Bolsa abierta con cueritos, cacahuates, pepino, jícama, clamato y salsas.", icon: "🔥" },
@@ -654,6 +695,7 @@
       frutas: new Set(),
       botanas: new Set(),
       toppings: new Set(),
+      babyShower: new Set(),
       especiales: new Set(),
       salsas: new Set(["Chamoy artesanal de la casa", "Limón con sal de grano", "Tajín clásico en polvo"])
     };
@@ -674,6 +716,29 @@
             <span class="text-slate-200 truncate flex-1 font-medium ${item.extra ? 'text-amber-300 font-bold' : ''}">
               ${item.name}
             </span>
+          </label>
+        `;
+      }).join('');
+    }
+
+    function renderBabyShower() {
+      const container = document.getElementById('group-baby-shower');
+      if (!container) return;
+
+      container.innerHTML = MENU_DATA.babyShower.map(item => {
+        const isChecked = state.babyShower.has(item.name);
+        return `
+          <label class="custom-check flex items-start gap-3 cursor-pointer bg-slate-900/80 hover:bg-slate-800/80 p-3 rounded-xl border border-pink-900/40 hover:border-pink-500/50 transition-all select-none">
+            <input type="checkbox" ${isChecked ? "checked" : ""} onchange="toggleItem('babyShower', '${item.name.replace(/'/g, "\\'")}', 'count-baby-shower')" class="hidden">
+            <div class="w-4 h-4 rounded border border-pink-400 mt-0.5 flex items-center justify-center transition-colors text-[10px] text-transparent">
+              <span class="check-icon">✓</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-1.5 font-bold text-white">
+                <span>${item.icon}</span>
+                <span>${item.name}</span>
+              </div>
+            </div>
           </label>
         `;
       }).join('');
@@ -736,26 +801,31 @@
       const countF = state.frutas.size;
       const countB = state.botanas.size;
       const countT = state.toppings.size;
+      const countBaby = state.babyShower.size;
       const countE = state.especiales.size;
 
       const elF = document.getElementById('count-frutas');
       const elB = document.getElementById('count-botanas');
       const elT = document.getElementById('count-toppings');
+      const elBaby = document.getElementById('count-baby-shower');
       const elE = document.getElementById('count-especiales');
 
       if (elF) elF.textContent = `${countF} seleccionadas`;
       if (elB) elB.textContent = `${countB} seleccionadas`;
       if (elT) elT.textContent = `${countT} seleccionados`;
+      if (elBaby) elBaby.textContent = `${countBaby} seleccionados`;
       if (elE) elE.textContent = `${countE} seleccionados`;
 
       const badgeF = document.getElementById('badge-frutas');
       const badgeB = document.getElementById('badge-botanas');
       const badgeT = document.getElementById('badge-toppings');
+      const badgeBaby = document.getElementById('badge-baby-shower');
       const badgeE = document.getElementById('badge-especiales');
 
       if (badgeF) badgeF.textContent = countF;
       if (badgeB) badgeB.textContent = countB;
       if (badgeT) badgeT.textContent = countT;
+      if (badgeBaby) badgeBaby.textContent = countBaby;
       if (badgeE) badgeE.textContent = countE;
     }
 
@@ -763,7 +833,7 @@
       const list = document.getElementById('live-selection-list');
       if (!list) return;
 
-      const totalItems = state.frutas.size + state.botanas.size + state.toppings.size + state.especiales.size;
+      const totalItems = state.frutas.size + state.botanas.size + state.toppings.size + state.babyShower.size + state.especiales.size;
       if (totalItems === 0) {
         list.innerHTML = `<p class="text-slate-500 italic text-center py-4">Selecciona opciones de la izquierda para ver el resumen de tu barra aquí...</p>`;
         return;
@@ -778,6 +848,9 @@
       }
       if (state.toppings.size > 0) {
         html += `<div class="mb-2"><strong class="text-rose-400 block text-[11px]">🍬 Toppings & Dulces (${state.toppings.size}):</strong><p class="text-slate-300 text-[11px]">${Array.from(state.toppings).join(', ')}</p></div>`;
+      }
+      if (state.babyShower.size > 0) {
+        html += `<div class="mb-2"><strong class="text-pink-400 block text-[11px]">👶 Baby Shower (${state.babyShower.size}):</strong><p class="text-slate-300 text-[11px]">${Array.from(state.babyShower).join(', ')}</p></div>`;
       }
       if (state.especiales.size > 0) {
         html += `<div class="mb-2"><strong class="text-purple-400 block text-[11px]">🌟 Especiales (${state.especiales.size}):</strong><p class="text-slate-300 text-[11px]">${Array.from(state.especiales).join(', ')}</p></div>`;
@@ -797,7 +870,7 @@
         targetWhatsApp = '52' + targetWhatsApp;
       }
 
-      const totalSelected = state.frutas.size + state.botanas.size + state.toppings.size + state.especiales.size;
+      const totalSelected = state.frutas.size + state.botanas.size + state.toppings.size + state.babyShower.size + state.especiales.size;
       if (totalSelected === 0) {
         alert('Por favor selecciona al menos algunos ingredientes o especiales para tu barra antes de enviar el pedido.');
         return;
@@ -829,6 +902,12 @@
       if (state.toppings.size > 0) {
         msg += `🍬 *TOPPINGS, GOMITAS & CHOCOLATES (${state.toppings.size}):*\n`;
         state.toppings.forEach(t => msg += `  • ${t}\n`);
+        msg += `\n`;
+      }
+
+      if (state.babyShower.size > 0) {
+        msg += `👶 *BABY SHOWER (${state.babyShower.size}):*\n`;
+        state.babyShower.forEach(b => msg += `  • ${b}\n`);
         msg += `\n`;
       }
 
@@ -894,6 +973,16 @@
         `).join('');
       }
 
+      const catBaby = document.getElementById('catalog-baby-shower');
+      if (catBaby) {
+        catBaby.innerHTML = MENU_DATA.babyShower.map(item => `
+          <div class="bg-pink-950/40 p-3.5 rounded-xl border border-pink-800/40 flex items-center gap-2">
+            <span class="text-xl">${item.icon}</span>
+            <span class="text-sm text-pink-100">${item.name}</span>
+          </div>
+        `).join('');
+      }
+
       const catE = document.getElementById('catalog-especiales');
       if (catE) {
         catE.innerHTML = MENU_DATA.especiales.map(e => `
@@ -948,6 +1037,7 @@
       renderCheckboxes('group-botanas', MENU_DATA.botanas, 'botanas', 'count-botanas');
       renderCheckboxes('group-toppings-chile', MENU_DATA.toppingsChile, 'toppings', 'count-toppings');
       renderCheckboxes('group-toppings-dulce', MENU_DATA.toppingsDulce, 'toppings', 'count-toppings');
+      renderBabyShower();
       renderEspeciales();
       renderSalsas();
       renderFullCatalog();
