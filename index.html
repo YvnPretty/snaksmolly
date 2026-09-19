@@ -98,6 +98,46 @@
       box-shadow: 0 20px 45px rgba(15, 23, 42, 0.28);
     }
 
+    #view-armador .card-dark,
+    #view-galeria .card-dark,
+    #view-menu-completo .card-dark,
+    #view-menu-completo .baby-panel {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.78), rgba(30, 41, 59, 0.46));
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      animation: panelReveal 560ms ease both;
+    }
+
+    #view-armador .card-dark:hover,
+    #view-galeria .card-dark:hover,
+    #view-menu-completo .card-dark:hover,
+    #view-menu-completo .baby-panel:hover {
+      border-color: rgba(251, 191, 36, 0.3);
+      box-shadow: 0 22px 52px rgba(15, 23, 42, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
+
+    #view-armador > div:nth-child(2) .card-dark,
+    #view-galeria > div:nth-child(2) .card-dark,
+    #view-menu-completo > div:nth-child(n+2) .card-dark {
+      animation-delay: 90ms;
+    }
+
+    #view-galeria img,
+    #view-menu-completo img {
+      transition: transform 500ms ease, filter 500ms ease;
+    }
+
+    #view-galeria .card-dark:hover img,
+    #view-menu-completo .card-dark:hover img {
+      transform: scale(1.025);
+      filter: saturate(1.08) brightness(1.04);
+    }
+
+    @keyframes panelReveal {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .baby-panel {
       background: linear-gradient(135deg, rgba(236, 72, 153, 0.17), rgba(244, 114, 182, 0.08), rgba(255,255,255,0.02));
       border: 1px solid rgba(244, 114, 182, 0.28);
@@ -617,9 +657,6 @@
       
       <div class="bg-gradient-to-r from-amber-500/10 via-rose-500/10 to-purple-500/10 border border-slate-700 rounded-2xl p-6 text-center">
         <h2 class="text-2xl font-black text-white mb-2">Carta Completa de Barra — M&J Snacks</h2>
-        <p class="text-xs md:text-sm text-slate-300 max-w-2xl mx-auto">
-          Catálogo 100% fiel a tus listas del PDF, ordenado por categorías lógicas para facilitar el servicio en barra y la impresión de menús para eventos.
-        </p>
       </div>
 
       <!-- SECCIÓN 1: FRUTAS -->
