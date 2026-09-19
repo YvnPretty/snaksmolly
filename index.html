@@ -109,6 +109,42 @@
       display: none;
     }
 
+    #view-armador input:not([type="checkbox"]),
+    #view-armador select,
+    #view-armador textarea {
+      transition: border-color 220ms ease, box-shadow 220ms ease, background-color 220ms ease, transform 220ms ease;
+      animation: fieldReveal 520ms ease both;
+    }
+
+    #view-armador input:not([type="checkbox"]):hover,
+    #view-armador select:hover,
+    #view-armador textarea:hover {
+      background-color: rgba(15, 23, 42, 0.92);
+      transform: translateY(-1px);
+    }
+
+    #view-armador input:not([type="checkbox"]):focus,
+    #view-armador select:focus,
+    #view-armador textarea:focus {
+      border-color: rgba(251, 113, 133, 0.9);
+      box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.14), 0 10px 28px rgba(15, 23, 42, 0.24);
+      transform: translateY(-1px) scale(1.005);
+    }
+
+    @keyframes fieldReveal {
+      from { opacity: 0; transform: translateY(7px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #view-armador input:not([type="checkbox"]),
+      #view-armador select,
+      #view-armador textarea {
+        animation: none;
+        transition: none;
+      }
+    }
+
     .mini-pill {
       display: inline-flex;
       align-items: center;
