@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
+        <div class="date-guests-grid grid grid-cols-2 gap-2">
+        <div class="grid grid-cols-2 gap-2">
+        <div class="grid grid-cols-2 gap-2">
   <meta http-equiv="Expires" content="0">
   <title>M&J Snacks - Barra de Snacks & Antojitos</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
@@ -40,7 +42,7 @@
       background-color: rgba(22, 12, 5, 0.72);
       background-image: repeating-linear-gradient(
         0deg,
-        rgba(18, 9, 4, 0.96),
+    #view-armador .date-guests-grid {
         rgba(18, 9, 4, 0.96) 38px,
         rgba(34, 18, 8, 0.7) 39px,
         rgba(10, 5, 2, 0.8) 40px
@@ -252,6 +254,109 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #475569;
     }
+
+    @media (max-width: 640px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      header {
+        padding: 1.5rem 0.75rem 2rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        line-height: 1.05;
+      }
+
+      header .flex.flex-wrap.justify-center {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        width: 100%;
+      }
+
+      header .flex.flex-wrap.justify-center button {
+        width: 100%;
+        justify-content: center;
+        min-height: 3rem;
+      }
+
+      main {
+        width: 100%;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        margin-top: 1.25rem;
+      }
+
+      #view-armador,
+      #view-galeria,
+      #view-menu-completo {
+        gap: 1rem;
+      }
+
+      #view-armador .card-dark,
+      #view-galeria .card-dark,
+      #view-menu-completo .card-dark,
+      #view-menu-completo .baby-panel {
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+
+      #view-armador .lg\:sticky {
+        position: static;
+      }
+
+      #view-armador .date-guests-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #view-armador input:not([type="checkbox"]),
+      #view-armador select,
+      #view-armador textarea {
+        min-height: 2.9rem;
+        font-size: 16px;
+      }
+
+      #view-armador textarea {
+        min-height: 6rem;
+      }
+
+      #view-armador .grid.grid-cols-2 > * {
+        min-width: 0;
+      }
+
+      #view-galeria h2,
+      #view-menu-completo h2 {
+        font-size: 1.35rem;
+        line-height: 1.15;
+      }
+
+      #view-galeria .md\:col-span-2 > div {
+        grid-template-columns: 1fr;
+      }
+
+      #view-galeria img {
+        max-height: 15rem;
+      }
+
+      #view-menu-completo .grid.grid-cols-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 380px) {
+      header h1 {
+        font-size: 1.75rem;
+      }
+
+      #view-armador .card-dark,
+      #view-galeria .card-dark,
+      #view-menu-completo .card-dark,
+      #view-menu-completo .baby-panel {
+        padding: 0.85rem;
+      }
+    }
   </style>
 </head>
 <body class="bg-[#090d16] text-slate-100 min-h-screen pb-20">
@@ -363,7 +468,7 @@
               </div>
               <div>
                 <label class="block text-slate-400 font-semibold mb-1">Fecha del Evento e Invitados</label>
-                <div class="grid grid-cols-2 gap-2">
+                <div class="date-guests-grid grid grid-cols-2 gap-2">
                   <input type="date" id="order-date" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-rose-500">
                   <input type="number" id="order-guests" placeholder="Núm. invitados" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-rose-500">
                 </div>
