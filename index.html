@@ -232,6 +232,13 @@
       outline: 2px solid #fda4af;
       outline-offset: 2px;
     }
+
+    .mobile-summary-shortcut {
+      display: none;
+    }
+    .mobile-summary-shortcut[hidden] {
+      display: none !important;
+    }
     
     ::-webkit-scrollbar {
       width: 8px;
@@ -251,6 +258,25 @@
     @media (max-width: 640px) {
       body {
         overflow-x: hidden;
+        padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+      }
+
+      .mobile-summary-shortcut {
+        display: flex;
+        position: fixed;
+        z-index: 30;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0.7rem 0.75rem calc(0.7rem + env(safe-area-inset-bottom));
+        background: rgba(9, 13, 22, 0.96);
+        border-top: 1px solid rgba(251, 113, 133, 0.35);
+        box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .mobile-summary-shortcut button {
+        width: 100%;
+        min-height: 3rem;
       }
 
       header {
@@ -606,7 +632,7 @@
         <!-- COLUMNA DERECHA: RESUMEN FIJO Y BOTÓN DE WHATSAPP -->
         <div class="lg:sticky lg:top-6 space-y-6">
           
-          <div class="card-dark rounded-2xl p-6 border-2 border-rose-500/80 shadow-2xl bg-gradient-to-b from-slate-900 via-slate-900/95 to-[#131d31]">
+          <div id="quote-summary" class="card-dark rounded-2xl p-6 border-2 border-rose-500/80 shadow-2xl bg-gradient-to-b from-slate-900 via-slate-900/95 to-[#131d31]">
             <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-4">
               <div>
                 <span class="text-[10px] font-black uppercase tracking-widest text-rose-400">Resumen en Vivo</span>
@@ -828,6 +854,14 @@
 
   </main>
 
+  <div id="mobile-summary-shortcut" class="mobile-summary-shortcut" aria-label="Acceso al resumen de cotización">
+    <button type="button" onclick="scrollToSummary()" aria-controls="quote-summary" class="rounded-xl bg-rose-600 text-white font-bold shadow-lg flex items-center justify-center gap-2">
+      <span>Ver mi barra</span>
+      <span id="mobile-selection-count" class="rounded-full bg-white/20 px-2.5 py-0.5 text-sm" aria-live="polite">0 opciones</span>
+      <span aria-hidden="true">↑</span>
+    </button>
+  </div>
+
   <!-- ==================== JAVASCRIPT: LOGICA Y DATOS 100% DEL PDF ==================== -->
   <script>
     const BUSINESS_WHATSAPP = '525532405326';
@@ -1047,6 +1081,16 @@
       if (badgeB) badgeB.textContent = countB;
       if (badgeT) badgeT.textContent = countT;
       if (badgeE) badgeE.textContent = countE;
+
+      const total = countF + countB + countT + countE;
+      document.getElementById('mobile-selection-count').textContent = `${total} ${total === 1 ? 'opción' : 'opciones'}`;
+    }
+
+    function scrollToSummary() {
+      document.getElementById('quote-summary').scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start'
+      });
     }
 
     function updateLiveSummary() {
@@ -1237,6 +1281,7 @@
         viewMenu.classList.remove('hidden');
         btnMenu.className = activeClass;
       }
+      document.getElementById('mobile-summary-shortcut').hidden = viewName !== 'armador';
     }
 
     window.addEventListener('DOMContentLoaded', () => {
