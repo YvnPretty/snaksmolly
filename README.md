@@ -26,6 +26,6 @@ Sitio web interactivo y armador de barras para eventos de **M&J Snacks**. Permit
 
 ## 🚀 Despliegue en GitHub Pages
 
-Un workflow de GitHub Actions publica el contenido de la rama `main` en GitHub Pages. El número receptor se configura en la constante `BUSINESS_WHATSAPP` de `index.html` (formato: código de país y diez dígitos, sin `+`). Las fotografías se sirven como archivos WebP reutilizables desde `images/`.
+GitHub Pages sirve la rama `gh-pages`; para publicar, actualiza esa rama con los cambios aprobados de `main`. El número receptor se configura en la constante `BUSINESS_WHATSAPP` de `index.html` (formato: código de país y diez dígitos, sin `+`). Las fotografías se sirven como archivos WebP reutilizables desde `images/`.
 
 © 2026 M&J Snacks. Todos los derechos reservados.
