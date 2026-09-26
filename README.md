@@ -19,13 +19,13 @@ Sitio web interactivo y armador de barras para eventos de **M&J Snacks**. Permit
   - 🍋 **Salsas & Escarchados** (Chamoy artesanal, limón con sal, tajín, miguelitos de colores y lechera).
 - **Armador Interactivo con Casillas de Verificación:** Selección intuitiva con contadores en tiempo real.
 - **Resumen en Vivo (Live Ticket):** Conteo automático de frutas, botanas, toppings y platillos especiales.
-- **Checkout directo a WhatsApp:** Genera un mensaje detallado con nombre, fecha, número de personas e ingredientes seleccionados, abriendo WhatsApp automáticamente.
+- **Solicitud de cotización por WhatsApp:** Valida nombre y teléfono de contacto y genera un mensaje con los datos del evento y la barra seleccionada. El cliente confirma el envío dentro de WhatsApp.
 - **Pestaña de Galería Real:** Fotos de montajes previos para generar confianza en los clientes.
 
 ---
 
 ## 🚀 Despliegue en GitHub Pages
 
-Este proyecto está configurado para desplegarse automáticamente en GitHub Pages directamente desde la rama  y .
+Un workflow de GitHub Actions publica el contenido de la rama `main` en GitHub Pages. El número receptor se configura en la constante `BUSINESS_WHATSAPP` de `index.html` (formato: código de país y diez dígitos, sin `+`). Las fotografías se sirven como archivos WebP reutilizables desde `images/`.
 
 © 2026 M&J Snacks. Todos los derechos reservados.
