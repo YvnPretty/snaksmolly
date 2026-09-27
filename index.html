@@ -20,6 +20,10 @@
     h1, h2, h3, h4, .font-heading {
       font-family: 'Outfit', sans-serif;
     }
+    .hero-photo {
+      object-position: center 45%;
+      filter: saturate(1.08) contrast(1.04);
+    }
     .font-script {
       font-family: 'Caveat', cursive;
     }
@@ -290,15 +294,18 @@
 
       header .flex.flex-wrap.justify-center {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.6rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.4rem;
         width: 100%;
       }
 
       header .flex.flex-wrap.justify-center button {
         width: 100%;
         justify-content: center;
-        min-height: 3rem;
+        min-height: 2.9rem;
+        padding: 0.6rem 0.35rem;
+        font-size: 0.75rem;
+        line-height: 1.1;
       }
 
       main {
@@ -415,7 +422,7 @@
         <!-- Logo Neón Real (Foto circular recortada) -->
         <div class="lg:col-span-4 flex flex-col items-center justify-center text-center">
           <div class="relative group cursor-pointer">
-            <img src="images/inline-bbc9b45eab9d.webp" alt="M&J Snacks Logo Neón Real" class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover neon-glow-real transition-transform duration-300 group-hover:scale-105 border-2 border-amber-400/40 shadow-2xl bg-black/60">
+            <img src="images/inline-bbc9b45eab9d.webp" alt="Logotipo luminoso de M&J Snacks" class="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover neon-glow-real transition-transform duration-300 group-hover:scale-105 border-2 border-amber-400/40 shadow-2xl bg-black/60">
           </div>
         </div>
 
@@ -428,19 +435,19 @@
             <span class="text-amber-400">M&J</span> <span class="text-rose-500">SNACKS</span>
           </h1>
           <p class="text-slate-300 text-sm md:text-base font-medium max-w-2xl">
-            ¡Arma tu barra personalizada con fruta fresca, botanas crujientes, toppings y especialidades gourmet! Elige tus ingredientes y envía tu pedido directamente por WhatsApp.
+            Fruta fresca, botanas y antojitos para celebrar a tu manera. Elige lo que más te gusta y solicita una cotización para tu evento.
           </p>
 
           <!-- Foto real de la barra en evento montada -->
           <div class="relative rounded-2xl overflow-hidden border border-amber-500/30 shadow-2xl group">
-            <img src="images/inline-4b024052533e.webp" alt="Barra M&J Snacks en Evento" class="w-full h-44 sm:h-52 object-cover transition-transform duration-500 group-hover:scale-105">
+            <img src="images/inline-a976606bf151.webp" alt="Barra de frutas y botanas preparada para un evento" class="hero-photo w-full h-48 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-105">
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4">
               <div class="flex items-center justify-between w-full">
                 <span class="inline-flex items-center gap-2">
                   <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
                 </span>
                 <span class="text-[11px] bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 text-amber-300 font-semibold">
-                  Servicio de Barra Libre
+                  Barra para eventos
                 </span>
               </div>
             </div>
@@ -453,13 +460,13 @@
       <!-- Selector de Pestañas / Modos -->
       <div class="flex flex-wrap justify-center gap-3 pt-2">
         <button onclick="switchView('armador')" id="btn-armador" class="px-6 py-3 rounded-xl font-bold text-sm bg-rose-600 hover:bg-rose-500 text-white shadow-lg shadow-rose-600/30 transition-all flex items-center gap-2">
-          <span>📲</span> Arma tu Barra & Pide por WhatsApp
+          <span aria-hidden="true">✨</span> Armar mi barra
         </button>
         <button onclick="switchView('galeria')" id="btn-galeria" class="px-6 py-3 rounded-xl font-bold text-sm bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all flex items-center gap-2">
-          <span>📸</span> Galería Real de Productos & Barra
+          <span aria-hidden="true">📸</span> Galería
         </button>
         <button onclick="switchView('menu-completo')" id="btn-menu-completo" class="px-6 py-3 rounded-xl font-bold text-sm bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all flex items-center gap-2">
-          <span>📜</span> Menú Completo Ordenado (84 Ítems)
+          <span aria-hidden="true">📋</span> Menú completo
         </button>
       </div>
 
